@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slideshow Automático</title>
+    <style>
+      .slideshow-container {
+        width: 100%;
+        position: auto;
+        margin: auto;
+      }
+
+      .mySlides {
+        display: none;
+        width: 100%;
+        height: auto;
+      }
+
+      /* Fades animation */
+      .fade {
+        animation-name: fade;
+        animation-duration: 2s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img
+          src="https://www.hostinger.com.br/tutoriais/wp-content/uploads/sites/12/2023/02/Portfolio-Desenvolvedor-Web.png"
+          style="width: 90%"
+        />
+      </div>
+
+      <div class="mySlides fade">
+        <img
+          src="https://miro.medium.com/v2/resize:fit:960/1*470-S2KoLnsk_6fnwBakyQ.png"
+          style="width: 100%"
+        />
+      </div>
+
+      <div class="mySlides fade">
+        <img
+          src="https://blog.xpeducacao.com.br/wp-content/uploads/2022/08/portfolio-desenvolvedor-front-end.jpg"
+          style="width: 80%"
+        />
+      </div>
+    </div>
+
+    <script>
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 2000); // Muda a imagem a cada 2 segundos
+      }
+    </script>
+  </body>
+</html>
